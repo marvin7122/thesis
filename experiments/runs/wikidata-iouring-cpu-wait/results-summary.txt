@@ -1,0 +1,21 @@
+# CPU load vs I/O wait during export (baseline 7bd97790e9ee6d5b2f6305fd8fd1c8000b63710b, Wikidata truthy)
+
+Binary: /local/data-ssd/stoetzem/wt/bench/iouring-pre-baseline/build/qlever-server (no liburing linkage)
+Method: 2 Hz /proc/stat + server process CPU time across each request window.
+
+## warm-construct
+200	22.628741	1302749672
+wall_s=22.5 usr=7.1 sys=0.5 iowait=0.1 idle=92.4 proc_cpu_s=25.9 proc_cpu_pct=115.1
+
+## warm-select
+200	19.610684	674222797
+wall_s=19.5 usr=7.2 sys=0.3 iowait=0.1 idle=92.4 proc_cpu_s=22.8 proc_cpu_pct=116.8
+
+## cold-construct
+200	22.589906	1302749672
+wall_s=22.0 usr=7.1 sys=0.7 iowait=0.1 idle=92.1 proc_cpu_s=25.5 proc_cpu_pct=115.7
+
+## cold-select
+200	19.662950	674222797
+wall_s=19.5 usr=7.2 sys=0.4 iowait=0.0 idle=92.4 proc_cpu_s=22.8 proc_cpu_pct=116.8
+
