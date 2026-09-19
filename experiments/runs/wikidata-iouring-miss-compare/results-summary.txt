@@ -1,0 +1,50 @@
+# Scattered vs sequential vocabulary access (baseline 7bd97790e9ee6d5b2f6305fd8fd1c8000b63710b, Wikidata truthy)
+
+Binary: /local/data-ssd/stoetzem/wt/bench/iouring-pre-baseline/build/qlever-server (no liburing linkage)
+Method: 1 warm + 2 cold reps per workload; cpu sampler + bounded perf pread window per rep.
+
+## large-construct-warm
+200	22.994391	1302749672	rbytes=0
+pread=NA
+wall_s=22.5 usr=7.1 sys=0.8 iowait=0.1 idle=92.1 proc_cpu_s=25.9 proc_cpu_pct=115.2
+
+## large-construct-cold1
+200	22.709547	1302749672	rbytes=509448192
+pread=NA
+wall_s=22.5 usr=7.1 sys=0.5 iowait=0.1 idle=92.3 proc_cpu_s=26.0 proc_cpu_pct=115.6
+
+## large-construct-cold2
+200	22.688614	1302749672	rbytes=509448192
+pread=NA
+wall_s=22.5 usr=7.0 sys=0.5 iowait=0.1 idle=92.4 proc_cpu_s=25.9 proc_cpu_pct=114.9
+
+## large-select-warm
+200	19.681118	674222797	rbytes=0
+pread=NA
+wall_s=19.5 usr=7.2 sys=0.4 iowait=0.1 idle=92.4 proc_cpu_s=22.7 proc_cpu_pct=116.4
+
+## large-select-cold1
+200	19.735708	674222797	rbytes=509448192
+pread=NA
+wall_s=19.5 usr=7.2 sys=0.4 iowait=0.1 idle=92.4 proc_cpu_s=22.7 proc_cpu_pct=116.5
+
+## large-select-cold2
+200	19.390540	674222797	rbytes=509448192
+pread=NA
+wall_s=19.0 usr=7.2 sys=0.4 iowait=0.1 idle=92.4 proc_cpu_s=22.3 proc_cpu_pct=117.1
+
+## random-construct-warm
+200	1.154654	4949275	rbytes=0
+pread=NA
+wall_s=1.0 usr=20.8 sys=1.7 iowait=0.0 idle=77.5 proc_cpu_s=3.6 proc_cpu_pct=355.8
+
+## random-construct-cold1
+200	3.646065	4949275	rbytes=983662592
+pread=NA
+wall_s=3.5 usr=5.9 sys=1.3 iowait=3.7 idle=89.2 proc_cpu_s=4.0 proc_cpu_pct=114.5
+
+## random-construct-cold2
+200	3.790030	4949275	rbytes=983662592
+pread=NA
+wall_s=3.5 usr=3.6 sys=1.2 iowait=3.9 idle=91.2 proc_cpu_s=2.7 proc_cpu_pct=77.4
+
