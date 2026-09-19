@@ -1,0 +1,7 @@
+# Sequential device speed (Wikidata data SSD)
+
+Three O_DIRECT reads of 8 GiB from /local/data-ssd/stoetzem/wikidata/index-in-old-format.2026-08-13T19:10:06Z/wikidata.index.spo.
+
+1	8589934592 bytes (8.6 GB, 8.0 GiB) copied, 1.39203 s, 6.2 GB/s
+2	8589934592 bytes (8.6 GB, 8.0 GiB) copied, 1.3905 s, 6.2 GB/s
+3	8589934592 bytes (8.6 GB, 8.0 GiB) copied, 1.40012 s, 6.1 GB/s
